@@ -1,7 +1,7 @@
 const path = require('path')
 // Require Express to run server and routes
 const express = require('express')
-
+const app = express()
 // Setup empty JS object to act as endpoint for all routes
 projectData = {};
 
@@ -21,11 +21,14 @@ const cors = require('cors')
 
 // Initialize the main project folder
 const publicDirectoryPath = path.join(__dirname, '../website')
-app.use(express.static('website'));
+app.use(express.static('publicDirectoryPath'));
 
 
 
 
+app.get('', (req, res) => {
+    res.send('Hello express!')
+})
 
 // Setup Server
 app.listen(3000, () => {
