@@ -4,16 +4,17 @@ console.log('Client side js is loaded')
 
 
 /* Global Variables */
+// user input data from form
+const userTemp = document.querySelector('#temp')
+const userDate = document.querySelector('#date')
+const userContent = document.querySelector('#content')
 
 // const to take user zipcode and user feelings
 const searchForm = document.querySelector('form')
 const searchZip = document.querySelector('input')
 const feelingSearch = document.querySelector('textarea')
 
-// user input data from form
-const userTemp = document.querySelector('#temp')
-const userDate = document.querySelector('#date')
-const userContent = document.querySelector('#content')
+
 
 
 // listens to user inputs and submittion of the form 
