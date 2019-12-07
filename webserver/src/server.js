@@ -1,11 +1,12 @@
 const path = require('path')
 const bodyParser = require('body-parser')
 
+
 // Require Express to run server and routes
 const express = require('express')
 const app = express()
 
-const forecast = require('./utils/forecast')
+//const forecast = require('./utils/forecast')
 
 
 // Setup empty JS object to act as endpoint for all routes

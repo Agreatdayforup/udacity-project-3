@@ -1,4 +1,4 @@
-//mport { request } from "http";
+//import { request } from "http";
 console.log('Client side js is loaded')
 
 
@@ -10,33 +10,38 @@ const searchForm = document.querySelector('form')
 const searchZip = document.querySelector('input')
 const feelingSearch = document.querySelector('textarea')
 
+// user input data from form
 const userTemp = document.querySelector('#temp')
 const userDate = document.querySelector('#date')
 const userContent = document.querySelector('#content')
 
 
-
+// listens to user inputs and submittion of the form 
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault()
-
+    // sets variables from user inputs
     const zipcode = searchZip.value
     const fs = feelingSearch.value
 
-    fetch('http://api.openweathermap.org/data/2.5/weather?zip=' + zipcode + ',us&APPID=31ccdce38d7be8cba4e13d567e1d43db&units=imperial').then((response) => {
-        response.json().then((data) => {
-            console.log(data) 
-            if (data.error) {
-                
-            } else {
-            userTemp.textContent = 'The temperature for ' + zipcode + ' is ' + data.forecast + '.'
-            userContent.textContent = fs
-            }
-    })
-})
+    // grabs temperature data from weather api
+    fetch('http://api.openweathermap.org/data/2.5/weather?zip=' + zipcode + ',us&APPID=31ccdce38d7be8cba4e13d567e1d43db&units=imperial').then(response => response.json()).then(data => {
+        userTemp.textContent = 'It is currently ' + data['main']['temp'] + ' degrees F outside'
+        
+        console.log(data['main']['temp'])
 
+    })
+        userContent.textContent = fs
+    
     console.log(zipcode)
     console.log(fs)
+    
+    
+    
+    
 })
+
+    
+
 
 
 // Create a new date instance dynamically with JS
