@@ -28,7 +28,7 @@ searchForm.addEventListener('submit', (e) => {
     fetch('https://api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&APPID=31ccdce38d7be8cba4e13d567e1d43db&units=imperial').then(response => response.json()).then(data => {
         userTemp.textContent = 'It is currently ' + data['main']['temp'] + ' degrees F outside'
         
-        console.log(data['main']['temp'])
+        console.log(data.main.temp)
 
     })
         userContent.textContent = fs
