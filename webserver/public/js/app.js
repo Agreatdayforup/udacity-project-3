@@ -16,7 +16,7 @@ const feelingSearch = document.querySelector('textarea')
 
 // API return data
 const apiWeather = {}
-    apiWeather.temp
+  
 
 // listens to user inputs and submittion of the form 
 searchForm.addEventListener('submit', (e) => {
@@ -32,9 +32,9 @@ searchForm.addEventListener('submit', (e) => {
         return data;
     })
     .then(data => {
-        apiWeather.temp.value = data.main.temp
-        userTemp.textContent = `It is currently ${apiWeather.temp.value} degrees F outside`
-        console.log(apiWeather.temp.value)
+        apiWeather.value = data.main.temp
+        userTemp.textContent = `It is currently ${apiWeather.value} degrees F outside`
+        console.log(apiWeather.value)
     })
         userContent.textContent = fs
     
