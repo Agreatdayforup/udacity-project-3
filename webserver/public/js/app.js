@@ -26,9 +26,10 @@ searchForm.addEventListener('submit', (e) => {
 
     // grabs temperature data from weather api
     fetch('https://api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&APPID=31ccdce38d7be8cba4e13d567e1d43db&units=imperial').then(response => response.json()).then(data => {
-        userTemp.textContent = 'It is currently ' + data['main']['temp'] + ' degrees F outside'
+        let temp = data.main.temp
+        userTemp.textContent = 'It is currently ${temp} degrees F outside'
         
-        console.log(data.main.temp)
+        console.log(temp)
 
     })
         userContent.textContent = fs
