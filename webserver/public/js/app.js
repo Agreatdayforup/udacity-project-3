@@ -33,11 +33,9 @@ searchForm.addEventListener('submit', (e) => {
     })
     .then(data => {
         apiWeather.temp.value = data.main.temp
-    })
-    .then( => {
         userTemp.textContent = `It is currently ${apiWeather.temp.value} degrees F outside`
         console.log(apiWeather.temp.value)
-     }
+    })
         userContent.textContent = fs
     
     console.log(zipcode)
